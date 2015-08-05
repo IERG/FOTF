@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IERG_FOTF
 IERG Factory of the Future Model
 
@@ -16,3 +17,7 @@ Steps to get this repository working:
 3. Run [this file](FactoryofTheFuture_Processing/FactoryofTheFuture_Processing.pde) in Processing.
 4. Open [http://localhost/website/index.html](http://localhost/website/index.html).
 5. Provided LEDs are connected to the relevant pins of the Arduino as outlined in the Arduino sketch, the web page should control the Arduino by the command flow shown in [this image](WebsiteCommandFlow.pdf).
+=======
+# FOTF
+Factory of the Future Demo Model
+>>>>>>> e5aa456d304b46069a1f7b1c8c43e7ab511244be
