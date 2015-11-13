@@ -16,7 +16,9 @@ http://projects.sindrelindstad.com
    /* This part must be altered to fit your local settings. The number in brackets after "Serial.list()" is where you declare what COM port your Arduino is connected to.
       If you get error messages, try a different number starting from 0 (e.g. 0, 1, 2, 3...) . */
     println(Serial.list());
+    delay(1000);
     port = new Serial(this, Serial.list()[0], 9600);  // Open the port that the Arduino board is connected to, at 9600 baud
+    delay(1000);
  
 }
  void draw() {
@@ -91,11 +93,11 @@ http://projects.sindrelindstad.com
   String wind_state[] = loadStrings("http://localhost/website/windLEDstate.txt"); // Insert the location of your .txt file
   print(wind_state[0]);  // Prints whatever is in the file ("1" or "0" or "2")
  
-  if (wind_state[0].equals("0") == true) {
+  if (wind_state[0].equals("1") == true) {
     println(" - TELLING ARDUINO TO TURN WIND LED RED");
     port.write('I'); // Send "I" over serial to set RED WIND LED to HIGH
  
-  } else if (wind_state[0].equals("1") == true){
+  } else if (wind_state[0].equals("0") == true){
     println(" - TELLING ARDUINO TO TURN WIND LED BLUE");
     port.write('J'); // Send "J" over serial to set BLUE WIND LED to HIGH
   }

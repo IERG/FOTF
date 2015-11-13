@@ -15,16 +15,16 @@
 
 
 //  Utility equipment uses red leds, on for on, off for off
-const int compressorledPin = 13; // use red led for utility equipment
+const int compressorledPin = 3; // use red led for utility equipment
 const int boilerledPin = 12; //// use red led for utility equipment
 
 //  Factory equipment uses green leds, on for on, off for off
 const int reactorledPin = 8; // use green led for factory equipment
-const int fischerledPin = 7; // use green led for factory equipment
+const int fischerledPin = 6; // use green led for factory equipment
 
 // Wind and grid elec use green leds, on for on, off for off
-const int windledPin = 11;
-const int gridledPin = 6;
+const int windledPin = 40;
+const int gridledPin = 60;//changed from 6
 
 int incomingByte;      // a variable to read incoming serial data into
  
@@ -92,6 +92,9 @@ digitalWrite(reactorledPin, HIGH);
     // if byte = G turn on fischer
     if (incomingByte == 'G') {
       digitalWrite(fischerledPin, HIGH);
+      delay(1000);
+      digitalWrite(fischerledPin,LOW);
+      delay(1000);
     }
     // if it's an H (ASCII 76) turn off the fischer LED:
     if (incomingByte == 'H') {
